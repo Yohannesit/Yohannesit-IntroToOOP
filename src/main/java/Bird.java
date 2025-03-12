@@ -37,7 +37,12 @@ public class Bird {
      * A constructor for the bird class: this method allows us to build a new bird with the 'new' keyword.
      * No need to change anything here, for now.
      */
-    public Bird(){
+    public Bird() {
+        this.ageMonths = 0;
+    }
+    
+     public Bird(int ageMonths){
+        this.ageMonths = ageMonths;
 
     }
     /**
@@ -45,7 +50,16 @@ public class Bird {
      *         greater than or equal to 3.
      */
     public String sound(){
-        return "";
+        return ageMonths < 3 ? "Tweet" : "Chirp";
     }
+public static void main(String[] args) {
+    Bird bird1 = new Bird();
+    Bird bird2 = new Bird(2);
+    Bird bird3 = new Bird(3);
+
+    System.out.println(bird1.sound());
+    System.out.println(bird2.sound());
+    System.out.println(bird3.sound());
+}
 
 }
